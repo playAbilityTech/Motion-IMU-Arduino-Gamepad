@@ -13,7 +13,7 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,
     JOYSTICK_TYPE_GAMEPAD, 10, 0, 
     true, true, false, false, false, false, 
     false, false, false, false, false);
-#define SCALING 6        // max Joystick value  at 90deg/SCALING.
+#define SCALING 3        // max Joystick value  at 90deg/SCALING.
 
 MPU6050 mpu;
 // MPU control/status vars
@@ -108,8 +108,8 @@ void loop() {
 
         // SCALING of 3 means that max value is achieved
         // at around 30° tilt instead of 90°.
-        Joystick.setXAxis((int)((ypr[2]-rollOffset)  * 1024/M_PI*SCALING));
-        Joystick.setYAxis((int)((ypr[1]-pitchOffset) * 1024/M_PI*SCALING));
+        Joystick.setXAxis((int)((-(ypr[2]-rollOffset))  * 1024/M_PI*SCALING));
+        Joystick.setYAxis((int)((-(ypr[1]-pitchOffset)) * 1024/M_PI*SCALING));
       
 //        if (-(ypr[1]-pitchOffset)*1024/M_PI > 60) {  // Accelerate?
 //          Joystick.pressButton(6);
