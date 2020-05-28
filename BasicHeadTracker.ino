@@ -10,9 +10,10 @@
 
 // Initialize Joystick with no buttons and 2 axes (X,Y)
 Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,
-    JOYSTICK_TYPE_MULTI_AXIS, 10, 0, true, true, false,
-    false, false, false, false, false, false, false, false);
-#define SCALING 3        // max Joystick value  at 90deg/SCALING.
+    JOYSTICK_TYPE_GAMEPAD, 10, 0, 
+    true, true, false, false, false, false, 
+    false, false, false, false, false);
+#define SCALING 6        // max Joystick value  at 90deg/SCALING.
 
 MPU6050 mpu;
 // MPU control/status vars
@@ -73,6 +74,8 @@ void setup() {
 
 
 void loop() {
+    // if programming failed, don't try to do anything
+    if (!dmpReady) return;
 
     // push button: when released, take current pitch & roll as offset
     if (digitalRead(BUTTON_PIN) == LOW && !buttonPressed) {
@@ -108,17 +111,17 @@ void loop() {
         Joystick.setXAxis((int)((ypr[2]-rollOffset)  * 1024/M_PI*SCALING));
         Joystick.setYAxis((int)((ypr[1]-pitchOffset) * 1024/M_PI*SCALING));
       
-        if (-(ypr[1]-pitchOffset)*1024/M_PI > 60) {  // Accelerate?
-          Joystick.pressButton(6);
-        } else {
-          Joystick.releaseButton(6);
-        }
-
-        if (-(ypr[1]-pitchOffset)*1024/M_PI <= -60) {  // Brake?
-          Joystick.pressButton(8);
-        } else {
-          Joystick.releaseButton(8);
-        }
+//        if (-(ypr[1]-pitchOffset)*1024/M_PI > 60) {  // Accelerate?
+//          Joystick.pressButton(6);
+//        } else {
+//          Joystick.releaseButton(6);
+//        }
+//
+//        if (-(ypr[1]-pitchOffset)*1024/M_PI <= -60) {  // Brake?
+//          Joystick.pressButton(8);
+//        } else {
+//          Joystick.releaseButton(8);
+//        }
             
         Joystick.sendState(); // this is slow; might cause FIFO overflow.
     }
