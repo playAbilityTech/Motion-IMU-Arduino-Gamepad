@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<joystick configversion="19" appversion="2.23">
+    <!--The SDL name for a joystick is included for informational purposes only.-->
+    <sdlname>Arduino Leonardo</sdlname>
+    <!--The GUID for a joystick is included for informational purposes only.-->
+    <guid>41233680000000000000504944564944</guid>
+    <sets>
+        <set index="1">
+            <axis index="1">
+                <throttle>normal</throttle>
+            </axis>
+            <axis index="2">
+                <deadZone>7659</deadZone>
+                <throttle>normal</throttle>
+                <axisbutton index="1">
+                    <slots>
+                        <slot>
+                            <code>0x1000013</code>
+                            <mode>keyboard</mode>
+                        </slot>
+                    </slots>
+                </axisbutton>
+                <axisbutton index="2">
+                    <slots>
+                        <slot>
+                            <code>0x1000015</code>
+                            <mode>keyboard</mode>
+                        </slot>
+                    </slots>
+                </axisbutton>
+            </axis>
+        </set>
+    </sets>
+</joystick>
