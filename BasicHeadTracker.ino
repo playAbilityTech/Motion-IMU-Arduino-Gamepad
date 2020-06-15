@@ -38,6 +38,9 @@ void dmpDataReady() { mpuInterrupt = true; }
 #define BUTTON_PIN A0
 bool buttonPressed = false;
 
+#define BUTTON_2_PIN 9
+bool button2Pressed = false;
+
 
 void setup() {
 
@@ -51,6 +54,7 @@ void setup() {
 
     // set up push button
     pinMode(BUTTON_PIN, INPUT_PULLUP);
+    pinMode(BUTTON_2_PIN, INPUT_PULLUP);
 
     // set up MPU6050
     pinMode(MPU_INTERRUPT_PIN, INPUT);
@@ -84,6 +88,14 @@ void loop() {
         pitchOffset = ypr[1];
         rollOffset = ypr[2];
         buttonPressed = false;
+    }
+
+    if (digitalRead(BUTTON_2_PIN) == LOW && !button2Pressed) {
+        Joystick.pressButton(3);
+        button2Pressed = true;
+    } else if (digitalRead(BUTTON_2_PIN) == HIGH && button2Pressed) {
+        Joystick.releaseButton(3);
+        button2Pressed = false;
     }
 
     // wait for MPU interrupt or extra packet(s) available
