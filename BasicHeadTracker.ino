@@ -13,7 +13,7 @@ Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID,
     JOYSTICK_TYPE_GAMEPAD, 10, 0, 
     true, true, false, false, false, false, 
     false, false, false, false, false);
-#define SCALING 3        // max Joystick value  at 90deg/SCALING.
+#define SCALING 4        // max Joystick value  at 90deg/SCALING.
 
 MPU6050 mpu;
 // MPU control/status vars
