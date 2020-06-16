@@ -38,6 +38,7 @@ void dmpDataReady() { mpuInterrupt = true; }
 #define BUTTON_PIN A0
 bool buttonPressed = false;
 
+unsigned long onTime = 0;
 
 void setup() {
 
@@ -76,13 +77,20 @@ void setup() {
 void loop() {
     // if programming failed, don't try to do anything
     if (!dmpReady) return;
-
+    
     // push button: when released, take current pitch & roll as offset
     if (digitalRead(BUTTON_PIN) == LOW && !buttonPressed) {
         buttonPressed = true;
+        onTime = millis();
+        Joystick.pressButton(3);
     } else if (digitalRead(BUTTON_PIN) == HIGH && buttonPressed) {
-        pitchOffset = ypr[1];
-        rollOffset = ypr[2];
+        if ((millis() - onTime) > 1000 ) // half second hold time
+        {
+          pitchOffset = ypr[1];
+          rollOffset = ypr[2];
+        }
+        else {}
+        Joystick.releaseButton(3);
         buttonPressed = false;
     }
 
