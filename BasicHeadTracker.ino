@@ -40,6 +40,9 @@ bool buttonPressed = false;
 
 unsigned long onTime = 0;
 
+const int EXT_BUTTONS_PIN[] = {15, 14, 16, 10};
+bool extButtonsPressed[] = {false, false, false, false};
+
 void setup() {
 
     // set up USB joystick
@@ -52,6 +55,10 @@ void setup() {
 
     // set up push button
     pinMode(BUTTON_PIN, INPUT_PULLUP);
+    for (int i = 0; i < sizeof(EXT_BUTTONS_PIN); i++) {
+      pinMode(EXT_BUTTONS_PIN[i], INPUT_PULLUP);
+    }
+    
 
     // set up MPU6050
     pinMode(MPU_INTERRUPT_PIN, INPUT);
@@ -92,6 +99,16 @@ void loop() {
         else {}
         Joystick.releaseButton(3);
         buttonPressed = false;
+    }
+
+    for (int i = 0; i < sizeof(EXT_BUTTONS_PIN); i++) {
+      if (digitalRead(EXT_BUTTONS_PIN[i]) == LOW && !extButtonsPressed[i]) {
+        extButtonsPressed[i] = true;
+        Joystick.pressButton(4+i);
+      } else if (digitalRead(EXT_BUTTONS_PIN[i]) == HIGH && extButtonsPressed[i]) {
+        Joystick.releaseButton(4+i);
+        extButtonsPressed[i] = false;
+      }
     }
 
     // wait for MPU interrupt or extra packet(s) available

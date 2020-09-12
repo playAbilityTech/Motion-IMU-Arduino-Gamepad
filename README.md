@@ -26,6 +26,13 @@ or see [this example profil](assets/joystick2updown.joystick.amgp)
 
 ## Build
 
+pin 7 -> button 3 (onboard)
+
+pin 15 -> button 4 (connector 1 green)
+pin 14 -> button 5 (connector 1 blue)
+pin 16 -> button 6 (connector 2 green)
+pin 10 -> button 7 (connector 2 blue)
+
 ### Important
 - Keep wire short Between MPU and Arduino (may cause issue if wire are to long)
 - Avoid hub USB
