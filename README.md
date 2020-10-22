@@ -26,12 +26,24 @@ or see [this example profil](assets/joystick2updown.joystick.amgp)
 
 ## Build
 
-pin 7 -> button 3 (onboard)
+MPU6050
 
-pin 15 -> button 4 (connector 1 green)
-pin 14 -> button 5 (connector 1 blue)
-pin 16 -> button 6 (connector 2 green)
-pin 10 -> button 7 (connector 2 blue)
+VCC -> VCC
+GND -> GND
+SCL -> 2
+SDA -> 3
+AD0 -> GND
+INT -> 7
+
+pin A0 -> button a (onboard)
+pin A1 -> LED onboard button
+
+pin 15 -> TriggerL (connector 1 green)
+pin 14 -> TriggerR (connector 1 blue)
+pin 16 -> button B (connector 2 green)
+pin 10 -> button START (connector 2 blue)
+
+pin RST -> Button RESET
 
 ### Important
 - Keep wire short Between MPU and Arduino (may cause issue if wire are to long)
