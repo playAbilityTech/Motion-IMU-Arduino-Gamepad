@@ -8,6 +8,7 @@
 :video_game:
 
 For the Giant Joystick use the Branch `GiantJoystick` : https://github.com/playAbilityTech/Motion-Gamepad/tree/GiantJoystick
+
 For the Balance board joystick use the Branch `BalanceBoard-Xinput` : https://github.com/playAbilityTech/Motion-Gamepad/tree/BalanceBoard-Xinput
 ## Features
 
