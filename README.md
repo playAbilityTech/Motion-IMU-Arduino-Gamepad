@@ -1,8 +1,34 @@
-
-
-
-
 # Motion Based Game Controller
+
+Transform your gaming experience with our DIY Motion Based Game Controller, utilizing the precision of the MPU6050 gyroscope and the versatility of an Arduino Pro Micro. This repository guides you through creating your own affordable and customizable game controller that connects seamlessly as a USB joystick to Linux, Mac, and Windows systems.
+
+## Highlights:
+- 🛠️ DIY friendly: Assemble in under 2 hours with no soldering required for basic setup.
+- 💰 Cost-effective: Build your controller for approximately €5.
+- 🎮 Plug-and-play: Recognized as a generic joystick on multiple operating systems.
+- 🔄 Customizable mapping: Configure sensor data to joystick movements to suit your play style.
+
+## Branches for Specialized Controllers:
+- 🕹️ Giant Joystick: Check out the `GiantJoystick` branch for an enlarged controller experience.
+- 🏄 Balance Board Joystick: Visit the `BalanceBoard-Xinput` branch for balance board integration.
+
+## Quick Start:
+1. Gather the hardware: Arduino Pro Micro, MPU6050 sensor, breadboard, optional push buttons, and wires.
+2. Assemble the hardware: Simple breadboard setup with minimal wiring.
+3. Prepare the software: Install Arduino IDE, required libraries, and example sketches from this repo.
+4. Upload and play: Flash your Arduino, plug in the controller, and enjoy your games with a new level of interaction.
+
+## Detailed Instructions & Support:
+- Step-by-step building guide
+- Software installation walkthrough
+- Troubleshooting tips for common setup issues
+- Configuration examples for joystick-to-key mapping
+
+Ready to level up your gaming? Dive into the Motion Based Game Controller project now!
+
+[Get Started](https://github.com/playAbilityTech/Motion-Gamepad)
+
+
 **An easy-to-build DIY game controller for computers, based on the MPU6050 gyroscope & Arduino Pro Micro.** 
 
 :video_game:
