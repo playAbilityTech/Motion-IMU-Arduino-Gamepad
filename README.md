@@ -3,7 +3,7 @@
 Transform your gaming experience with our DIY Motion Based Game Controller, utilizing the precision of the MPU6050 gyroscope and the versatility of an Arduino Pro Micro. This repository guides you through creating your own affordable and customizable game controller that connects seamlessly as a USB joystick to Linux, Mac, and Windows systems.
 
 ## Highlights:
-- 🛠️ DIY friendly: Assemble in under 2 hours with no soldering required for basic setup.
+- 🛠️ DIY friendly: Assemble in under 1 hour with no soldering required for basic setup.
 - 💰 Cost-effective: Build your controller for approximately €5.
 - 🎮 Plug-and-play: Recognized as a generic joystick on multiple operating systems.
 - 🔄 Customizable mapping: Configure sensor data to joystick movements to suit your play style.
